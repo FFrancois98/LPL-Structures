@@ -49,7 +49,7 @@ sum-up-numbers-general([L|Ls], Result) :-
 
 % FUNCTION 4 - commom-unique-elements
 
-% sub function for finding the unique elements
+% sub function for finding the unique elements using flatten list.
 common-uni-flat([], _, []).
 
 common-uni-flat([H1|T1], L2, [H1|Res]) :-
@@ -59,7 +59,7 @@ common-uni-flat([H1|T1], L2, [H1|Res]) :-
 common-uni-flat([_|T1], L2, Res) :-
     common-uni-flat(T1, L2, Res).
 
-
+% flattens the list and finds the unicque ones.
 
 common-unique-elements([], _, []).
 common-unique-elements(_, [], []).
