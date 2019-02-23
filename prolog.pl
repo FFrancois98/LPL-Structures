@@ -47,3 +47,45 @@ sum-up-numbers-general([L|Ls], Result) :-
         my-flatten([L|Ls],FlatL),
         sum-up-numbers-simple(FlatL, Result).
 
+% FUNCTION 4 - commom-unique-elements
+
+% sub function for finding the unique elements using flatten list.
+common-uni-flat([], _, []).
+
+common-uni-flat([H1|T1], L2, [H1|Res]) :-
+    member(H1, L2),
+    common-uni-flat(T1, L2, Res).
+
+common-uni-flat([_|T1], L2, Res) :-
+    common-uni-flat(T1, L2, Res).
+
+% flattens the list and finds the unicque ones.
+
+common-unique-elements([], _, []).
+common-unique-elements(_, [], []).
+
+common-unique-elements(L1, L2, Res) :-
+    my-flatten(L1,FlatL1),
+    my-flatten(L2,FlatL2),
+    common-uni-flat(FlatL1,FlatL2, Res).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
